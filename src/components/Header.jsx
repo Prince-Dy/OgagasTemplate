@@ -1,6 +1,7 @@
 import React from "react";
 import './component.css'
 import { Link } from "react-router-dom";
+import { logo } from "../assets/image";
 
 const Header = () => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -9,7 +10,13 @@ const Header = () => {
 
   return (
     <div className="header flex justify-between items-center w-full h-auto p-[20px] box-border bg-primary  z-50">
-      <div className="logo">logo</div>
+      <div className="logo">
+        <img src={logo} alt="" 
+        style={{
+          width:"60px",
+          height:"60px"
+        }}/>
+      </div>
       {/* Hamburger button for small screens */}
       <button
         className="sm:hidden text-white focus:outline-none z-20"

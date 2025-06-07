@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Alice Johnson",
+        "rating": "⭐⭐⭐⭐⭐",
+        "content": "This service exceeded my expectations. Highly recommended!"
+    },
+    {
+        "id": 2,
+        "name": "Brian Smith",
+        "rating": "⭐⭐⭐⭐⭐",
+        "content": "Great experience overall. Will use again."
+    },
+    {
+        "id": 3,
+        "name": "Catherine Lee",
+        "rating": "⭐⭐⭐⭐",
+        "content": "Professional and reliable. Very satisfied with the results."
+    }
+]
