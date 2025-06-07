@@ -1,12 +1,12 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { hero1 } from '../assets/image';
-import "slick-carousel/slick/slick.css"; 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { hero1 } from "../assets/image";
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
@@ -53,7 +53,6 @@ import Slider from "react-slick";
 // Alternative: Use react-slick for a carousel/slider
 // Install with: npm install react-slick slick-carousel
 
-
 function Hero() {
   const settings = {
     dots: true,
@@ -63,7 +62,7 @@ function Hero() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows: false, // Hide default arrows
+    arrows: false,
     fade: true,
     pauseOnHover: true,
     appendDots: dots => (
@@ -72,11 +71,12 @@ function Hero() {
           position: "absolute",
           left: "50%",
           transform: "translateX(-50%)",
-          bottom: "32px", // 8 below the button
+          bottom: "30px",
           zIndex: 20,
           width: "100%",
           display: "flex",
-          justifyContent: "center"
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <ul className="flex gap-2">{dots}</ul>
@@ -85,14 +85,28 @@ function Hero() {
     customPaging: i => (
       <button
         style={{
-          width: "12px",
-          height: "12px",
-          borderRadius: "50%",
-          background: "#f59e0b",
+          width: "20px",
+          height: "20px",
+          background: "transparent",
           border: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           padding: 0,
         }}
-      />
+      >
+        <span
+          style={{
+            display: "block",
+            width: "10px",
+            height: "10px",
+            borderRadius: "50%",
+            background: "white",
+            margin: "auto",
+            boxShadow: "0 0 0 2px navy",
+          }}
+        />
+      </button>
     ),
   };
 
@@ -108,11 +122,11 @@ function Hero() {
   };
 
   return (
-    <div className="relative top-16 mt-0.5 h-[500px] w-full">
+    <div id="home" className="relative top-16 mt-0.5 mb-3 h-[400px] w-full">
       {/* Custom arrows */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 z-20 transform -translate-y-1/2 bg-amber-500 text-white px-3 py-2 rounded-full shadow hover:bg-amber-600 transition"
+        className="absolute left-4 top-1/2 z-20 transform -translate-y-1/2 bg-secondary sm:bg-transparent border-1 border-primary text-white px-3 py-2 rounded-full shadow hover:bg-secondary transition"
         style={{ left: 16 }}
         aria-label="Previous Slide"
       >
@@ -120,44 +134,57 @@ function Hero() {
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 z-20 transform -translate-y-1/2 bg-amber-500 text-white px-3 py-2 rounded-full shadow hover:bg-amber-600 transition"
+        className="absolute right-4 top-1/2 z-20 transform -translate-y-1/2 bg-secondary sm:bg-transparent border-1 border-primary text-white px-3 py-2 rounded-full shadow hover:bg-secondary transition"
         style={{ right: 16 }}
         aria-label="Next Slide"
       >
         &#8594;
       </button>
       <Slider ref={sliderRef} {...settings}>
-        <div className="relative h-[500px]">
+        <div className="relative h-[500px] ">
           <img
             src={hero1}
-            style={{ backgroundPosition: "center", width: "100%", height: "100%", objectFit: "cover" }}
+            style={{
+              backgroundPosition: "center",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
             alt=""
           />
-          <button
-            className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10 px-6 py-3 text-lg font-semibold text-white bg-amber-500 rounded shadow hover:bg-amber-600 transition"
+          <button className="course-btn absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10 px-6 py-3 text-lg font-semibold text-white  rounded shadow hover:bg-transparent hover:border-secondary bg-secondary transition border-1 border-primary"
+          
           >
             Buy a course
           </button>
         </div>
-        <div className="relative h-[500px]">
+        <div className="relative h-[500px] ">
           <img
             src={hero1}
-            style={{ backgroundPosition: "center", width: "100%", height: "100%", objectFit: "cover" }}
+            style={{
+              backgroundPosition: "center",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
             alt=""
           />
         </div>
-        <div className="relative h-[500px]">
+        <div className="relative h-[500px] ">
           <img
             src={hero1}
-            style={{ backgroundPosition: "center", width: "100%", height: "100%", objectFit: "cover" }}
+            style={{
+              backgroundPosition: "center",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
             alt=""
           />
         </div>
-        {/* Add more slides as needed */}
       </Slider>
-  
     </div>
   );
 }
 
-export default Hero
+export default Hero;
