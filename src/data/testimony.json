@@ -1,20 +1,21 @@
 [
     {
         "id": 1,
-        "name": "Alice Johnson",
+        "profile":"profile.jpg",
+        "name": "Vote OGAGA",
         "rating": "⭐⭐⭐⭐⭐",
         "content": "This service exceeded my expectations. Highly recommended!"
     },
     {
         "id": 2,
         "name": "Brian Smith",
-        "rating": "⭐⭐⭐⭐⭐",
+        "rating": "⭐⭐⭐⭐",
         "content": "Great experience overall. Will use again."
     },
     {
         "id": 3,
         "name": "Catherine Lee",
-        "rating": "⭐⭐⭐⭐",
+        "rating": "⭐⭐⭐",
         "content": "Professional and reliable. Very satisfied with the results."
     }
 ]

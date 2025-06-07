@@ -1,6 +1,8 @@
 // import { testimonial1 } from "../assets/image";
+import { testimonial1 } from "../assets/image";
 import testimonials from "../data/testimony.json";
 import React from "react";
+import { getImgUrl } from "../utils/getImgUrl";
 
 export default function Testimonials() {
   return (
@@ -11,12 +13,23 @@ export default function Testimonials() {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-100 rounded-lg shadow p-6 text-left"
+              className="bg-gray-100 rounded-lg shadow p-6 text-left grid grid-cols-3 grid-row-5"
             >
-              {/* <p className="text-gray-700 italic mb-4"><img src={testimonial1} alt="" /></p> */}
-              <p>{item.rating}</p>
-              <p className="text-gray-900 font-semibold">– {item.name}</p>
-              <p className="text-gray-600">{item.content}</p>
+              <p className="text-gray-700 italic mb-4 rounded-2xl row-span-2"><img 
+              style={{
+                backgroundPosition:"center",
+                backgroundSize:"cover",
+                width:"90px",
+                height:"90px",
+                borderRadius:"50px"
+
+              }}
+              src={`${getImgUrl(item.profile)}`} alt="CEO" /></p>
+              <div>
+                <p className="text-gray-900 font-semibold col-span-2"> {item.name}</p>
+                <p>{item.rating}</p>
+              </div>
+              <p className="text-gray-600 col-start-1 col-end-3">{item.content}</p>
             </div>
           ))}
         </div>

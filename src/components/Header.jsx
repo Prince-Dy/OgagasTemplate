@@ -108,7 +108,7 @@ const Header = () => {
             Testimony
           </a>
             </li>
-            {/* For different pages, use Link from react-router-dom */}
+            
             <li className="sm:border-b-0 border-b-3">
           <Link to="/course" onClick={() => setSidebarOpen(false)}>Course</Link>
             </li>
