@@ -2,7 +2,7 @@
 
 import { FaFacebook } from "react-icons/fa";
 import { hero1 } from "../assets/image";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -100,6 +100,7 @@ function Home() {
         </div>
 
   <Testimonials />
+      <Footer />
     </>
   );
 }
