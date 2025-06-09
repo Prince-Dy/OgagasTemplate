@@ -7,7 +7,7 @@ const Header = () => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   return (
-    <div className="header flex justify-between items-center w-full h-auto p-[5px] box-border bg-primary  z-50">
+    <div className="header flex justify-between items-center w-full h-auto p-[5px] box-border  z-50 backdrop-blur-md bg-primary/80">
       <div className="logo">
         <img
           src={logo}
@@ -15,6 +15,7 @@ const Header = () => {
           style={{
             width: "20px",
             height: "20px",
+            background: "rgba(255, 255, 255, 0.5)",
           }}
         />
       </div>
@@ -62,7 +63,7 @@ const Header = () => {
            </Link>
           </li>
           <li>
-        <Link
+            <Link
               to="/#intro"
               onClick={(e) => {
                 e.preventDefault();
