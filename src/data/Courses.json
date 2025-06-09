@@ -23,6 +23,29 @@
     ]
   },
   {
+    "id": "architecture-101",
+    "title": "Architecture Basics",
+    "description": "Learn the fundamentals of architectural design.",
+    "image": "/assets/arch1.jpg",
+    "tiers": [
+      {
+        "title": "Basic",
+        "price": "₦10,000",
+        "features": ["Intro to concepts", "1 module", "Templates"]
+      },
+      {
+        "title": "Standard",
+        "price": "₦10,000",
+        "features": ["Intro to concepts", "1 module", "Templates"]
+      },
+      {
+        "title": "Pro",
+        "price": "₦25,000",
+        "features": ["Everything in Basic", "Full modules", "Support"]
+      }
+    ]
+  },
+  {
     "id": "advanced-design",
     "title": "Advanced Architectural Design",
     "description": "Take your designs to the next level.",

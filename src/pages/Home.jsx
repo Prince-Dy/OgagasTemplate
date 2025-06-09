@@ -33,13 +33,12 @@ function Home() {
       <Header />
       <Hero />
       <div
-        id="intro"
-        className="container mx-auto px-4 top-40 relative w-[90%] sm:w-[80%]"
+        className="container mx-auto px-4 top-40 relative w-[100%] sm:w-[100%]"
       >
-        <h1 className="text-3xl font-bold text-center my-8">
+        <h1 className="text-3xl font-bold text-center my-8 text-secondary">
           Welcome to Our Website
         </h1>
-        <p className="text-center text-gray-700">
+        <p className="text-left text-secondary">
           This is a simple homepage layout using React and Tailwind CSS. Lorem
           ipsum dolor sit amet consectetur adipisicing elit. Quisquam accusamus
           ex quos amet quas eligendi quis tenetur aperiam velit ab doloremque
@@ -66,11 +65,12 @@ function Home() {
       </div>
       <div className="w-[90%] sm:w-[80%] flex justify-center m-auto top-40 relative my-8">
         <video
+        id='intro'
           ref={videoRef}
           width="100%"
           height="360"
           autoPlay
-          unmute
+          unmute    
           loop
         >
           <source src="./NodeCourse.mp4" type="video/mp4"  />
@@ -107,7 +107,7 @@ function Home() {
               <h3>CEO@gmail.com</h3>
             </div>
           </div>
-          <div className="profile mr-2.5 relative w-full sm:w-1/2 h-full box-border bg-amber-500">
+          <div className="profile mr-2.5 relative w-full sm:w-1/2 h-full box-border ">
             <img
               alt="CEO"
               style={{

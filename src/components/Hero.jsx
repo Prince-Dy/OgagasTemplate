@@ -63,7 +63,7 @@ function Hero() {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
-    fade: true,
+    fade: false, // use slide instead of fade
     pauseOnHover: true,
     appendDots: dots => (
       <div
@@ -71,15 +71,16 @@ function Hero() {
           position: "absolute",
           left: "50%",
           transform: "translateX(-50%)",
-          bottom: "30px",
+          bottom: "-30px", // move indicator below the image
           zIndex: 20,
           width: "100%",
           display: "flex",
+          fontSize: "0.8rem",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <ul className="flex gap-2">{dots}</ul>
+        <ul className="flex gap-2 ">{dots}</ul>
       </div>
     ),
     customPaging: i => (
@@ -103,12 +104,23 @@ function Hero() {
             borderRadius: "50%",
             background: "white",
             margin: "auto",
-            boxShadow: "0 0 0 2px navy",
+            boxShadow: "0 0 0 2px transparent",
           }}
         />
       </button>
     ),
   };
+
+  // Custom control buttons (commented out for now)
+  // const sliderRef = React.useRef(null);
+
+  // const handlePrev = () => {
+  //   sliderRef.current && sliderRef.current.slickPrev();
+  // };
+
+  // const handleNext = () => {
+  //   sliderRef.current && sliderRef.current.slickNext();
+  // };
 
   // Custom control buttons
   const sliderRef = React.useRef(null);
@@ -122,9 +134,9 @@ function Hero() {
   };
 
   return (
-    <div id="home" className="relative top-16 mt-0.5 mb-3 h-[400px] w-full">
+    <div id="home" className="relative top-8 mt-0.5 mb-3 h-[400px] w-full">
       {/* Custom arrows */}
-      <button
+      {/* <button
         onClick={handlePrev}
         className="absolute left-4 top-1/2 z-20 transform -translate-y-1/2 bg-secondary sm:bg-transparent border-1 border-primary text-white px-3 py-2 rounded-full shadow hover:bg-secondary transition"
         style={{ left: 16 }}
@@ -139,7 +151,7 @@ function Hero() {
         aria-label="Next Slide"
       >
         &#8594;
-      </button>
+      </button> */}
       <Slider ref={sliderRef} {...settings}>
         <div className="relative h-[500px] ">
           <img

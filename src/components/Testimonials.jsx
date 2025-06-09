@@ -6,14 +6,14 @@ import { getImgUrl } from "../utils/getImgUrl";
 
 export default function Testimonials() {
   return (
-    <section className="py-16 bg-white relative top-40 flex flex-col w-[90%] sm:w-[80%] m-auto box-border h-auto ">
+    <section id="testimony" className="py-16 bg-white relative top-40 flex flex-col w-[90%] sm:w-[80%] m-auto box-border h-auto ">
       <div className="flex flex-col ">
-        <h2 className="text-3xl font-bold text-secondary mb-8 text-center ">Clients</h2>
-        <div className="grid sm:grid-cols-3 gap-6 ">
+        <h2 className="text-3xl font-bold text-secondary font-monts mb-8 text-center ">Testimonials</h2>
+        <div className="grid sm:grid-cols-3 gap-6 box-border">
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-100 rounded-lg shadow p-6 text-left grid grid-cols-3 grid-row-5"
+              className="bg-gray-100  shadow p-6 text-left grid grid-cols-3 grid-row-5"
             >
               <p className="text-gray-700 italic mb-4 rounded-2xl row-span-2"><img 
               style={{
@@ -29,7 +29,7 @@ export default function Testimonials() {
                 <p className="text-gray-900 font-semibold col-span-2"> {item.name}</p>
                 <p>{item.rating}</p>
               </div>
-              <p className="text-gray-600 col-start-1 col-end-3">{item.content}</p>
+              <p className="text-gray-600 col-start-1 col-end-3 w-full overflow-x-clip">{item.content}</p>
             </div>
           ))}
         </div>
