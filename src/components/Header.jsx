@@ -37,11 +37,22 @@ const Header = () => {
       </button>
 
       <nav
-        className={`fixed top-0 left-0 h-full w-[200px] max-w-xs bg-[#e6e6e6] z-20 transform ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 sm:static sm:translate-x-0 sm:bg-transparent sm:w-auto sm:h-auto`}
+        className={`fixed top-0 left-0 w-full max-h-[350px] bg-[#e6e6e6] z-20 transform ${
+          sidebarOpen ? "translate-y-0" : "-translate-y-full"
+        } transition-transform duration-300 sm:static sm:translate-y-0 sm:w-auto sm:max-h-none sm:bg-transparent`}
       >
-        <ul className="flex flex-col sm:flex-row gap-10 mt-1.5 sm:gap-3.5 font-monts uppercase text-[16px] sm:text-[12px] text-secondary p-8 sm:p-0 ">
+        {/* Close button for mobile nav */}
+        <button
+          className="absolute right-4 top-4 sm:hidden text-secondary z-30"
+          onClick={() => setSidebarOpen(false)}
+          aria-label="Close navigation"
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </button>
+        <ul className="flex flex-col sm:flex-row gap-10 mt-1.5 sm:gap-3.5 font-monts uppercase text-[16px] sm:text-[12px] text-secondary p-8 sm:p-0 bg-[#e6e6e6] sm:bg-transparent">
           {/* For same-page sections, use anchor links with smooth scroll */}
           <li>
             <Link
@@ -51,7 +62,6 @@ const Header = () => {
                 const el = document.getElementById("home");
                 if (el) {
                   el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  // Slow down scroll by using setTimeout and scrollBy
                   setTimeout(() => {
                     window.scrollBy({ top: -1, behavior: "smooth" });
                   }, 1000);

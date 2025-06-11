@@ -33,3 +33,9 @@
     transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 640px) {
+    .header nav{
+       display: flex;
+       justify-content: center; 
+    }
+}
